@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歡樂休息日：2026 宅男之日 🏠</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Noto Sans TC & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'Noto Sans TC', 'sans-serif'],
+                    },
+                    colors: {
+                        cozy: {
+                            purple: '#8B5CF6',
+                            indigo: '#6366F1',
+                            pink: '#EC4899',
+                            amber: '#F59E0B',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Modern Ambient Animated Gradient Background */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+            min-height: 100vh;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Animated Ambient Blobs */
+        .ambient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 18s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(135deg, #c084fc, #e879f9);
+            top: -50px;
+            left: -50px;
+            animation-duration: 14s;
+        }
+
+        .blob-2 {
+            width: 380px;
+            height: 380px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            bottom: -80px;
+            right: -60px;
+            animation-duration: 20s;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 280px;
+            height: 280px;
+            background: linear-gradient(135deg, #fbbf24, #f43f5e);
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-duration: 16s;
+            animation-delay: -8s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0px, 0px) scale(1) rotate(0deg);
+            }
+            50% {
+                transform: translate(40px, 60px) scale(1.1) rotate(120deg);
+            }
+            100% {
+                transform: translate(-30px, -40px) scale(0.95) rotate(240deg);
+            }
+        }
+
+        /* Glassmorphism Classes */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .glass-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-item:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .active-tab {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.12));
+            border-color: rgba(255, 255, 255, 0.4);
+            color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Completion Style */
+        .completed-item {
+            opacity: 0.45;
+        }
+
+        .completed-item .activity-title {
+            text-decoration: line-through;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen pb-14 flex flex-col items-center">
+
+    <!-- Ambient Floating Aura Background -->
+    <div class="ambient-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Main Mobile Layout Container -->
+    <div class="w-full max-w-md px-4 pt-6 space-y-5 relative z-10">
+
+        <!-- Top Header Banner -->
+        <header class="glass-card rounded-3xl p-6 text-center relative overflow-hidden">
+            <!-- Shimmer effect overlay -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-30 pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <!-- Date Badge -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-amber-300 text-xs font-semibold mb-3 tracking-wide shadow-sm">
+                    <i class="fa-solid fa-sparkles text-amber-400"></i>
+                    <span>2026-11-07 ~ 2026-11-08</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-2xl font-extrabold text-white tracking-tight mb-1 drop-shadow-md">
+                    歡樂休息日：2026 宅男之日 🏠
+                </h1>
+                <p class="text-xs text-slate-300 font-medium mb-5 tracking-wide">模型組裝 · 睡覺吃到飽 · 浪漫熱線</p>
+
+                <!-- Countdown Block -->
+                <div class="bg-slate-950/50 rounded-2xl p-4 border border-white/10 shadow-inner">
+                    <div class="text-[10px] font-semibold text-slate-400 mb-2.5 tracking-widest uppercase">距離休假啟動倒數</div>
+                    <div id="countdown" class="grid grid-cols-4 gap-2 text-center">
+                        <div class="bg-white/5 rounded-xl py-2 px-1 border border-white/10">
+                            <span id="days" class="block text-xl font-bold text-amber-400 drop-shadow">00</span>
+                            <span class="text-[10px] text-slate-400 font-medium">天</span>
+                        </div>
+                        <div class="bg-white/5 rounded-xl py-2 px-1 border border-white/10">
+                            <span id="hours" class="block text-xl font-bold text-amber-400 drop-shadow">00</span>
+                            <span class="text-[10px] text-slate-400 font-medium">時</span>
+                        </div>
+                        <div class="bg-white/5 rounded-xl py-2 px-1 border border-white/10">
+                            <span id="minutes" class="block text-xl font-bold text-amber-400 drop-shadow">00</span>
+                            <span class="text-[10px] text-slate-400 font-medium">分</span>
+                        </div>
+                        <div class="bg-white/5 rounded-xl py-2 px-1 border border-white/10">
+                            <span id="seconds" class="block text-xl font-bold text-amber-400 drop-shadow">00</span>
+                            <span class="text-[10px] text-slate-400 font-medium">秒</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Overall Progress Bar -->
+                <div class="mt-4 text-left">
+                    <div class="flex justify-between items-center text-xs text-slate-300 font-medium mb-1.5 px-0.5">
+                        <span class="flex items-center gap-1.5"><i class="fa-solid fa-square-check text-emerald-400"></i> 今日行程完成度</span>
+                        <span id="progress-percent" class="font-bold text-emerald-300">0%</span>
+                    </div>
+                    <div class="w-full bg-slate-950/60 rounded-full h-2.5 overflow-hidden border border-white/10 p-0.5">
+                        <div id="progress-bar" class="bg-gradient-to-r from-amber-400 via-pink-500 to-emerald-400 h-full rounded-full transition-all duration-500 ease-out" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="glass-pill p-1.5 rounded-2xl flex gap-1">
+            <button id="tab-day1" onclick="switchDay(1)" class="flex-1 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 text-slate-300 active-tab flex items-center justify-center gap-2">
+                <i class="fa-solid fa-gamepad"></i> Day 1 (11月7日)
+            </button>
+            <button id="tab-day2" onclick="switchDay(2)" class="flex-1 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 text-slate-300 flex items-center justify-center gap-2">
+                <i class="fa-solid fa-couch"></i> Day 2 (11月8日)
+            </button>
+        </div>
+
+        <!-- Schedule Items Area -->
+        <main id="schedule-container" class="space-y-3">
+            <!-- Dynamic Schedule items rendered here -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center pt-3 pb-2 text-xs text-slate-400 font-medium">
+            <p>☕️ 宅在家就是最頂級的度假假期。</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Schedule Data
+        const scheduleData = {
+            1: [
+                { id: "d1-1", time: "09:00 ~ 10:30", title: "吃早餐", icon: "fa-utensils", color: "from-amber-500/20 to-orange-500/20 text-amber-300 border-amber-500/30" },
+                { id: "d1-2", time: "11:00 ~ 14:00", title: "做模型", icon: "fa-robot", color: "from-blue-500/20 to-cyan-500/20 text-cyan-300 border-cyan-500/30" },
+                { id: "d1-3", time: "14:00 ~ 17:00", title: "睡午覺", icon: "fa-bed", color: "from-indigo-500/20 to-purple-500/20 text-indigo-300 border-indigo-500/30" },
+                { id: "d1-4", time: "17:00 ~ 17:30", title: "洗澡", icon: "fa-shower", color: "from-teal-500/20 to-emerald-500/20 text-teal-300 border-teal-500/30" },
+                { id: "d1-5", time: "17:30 ~ 18:00", title: "出門買晚餐", icon: "fa-bag-shopping", color: "from-orange-500/20 to-red-500/20 text-orange-300 border-orange-500/30" },
+                { id: "d1-6", time: "18:00 ~ 19:30", title: "吃晚餐", icon: "fa-bowl-food", color: "from-amber-500/20 to-yellow-500/20 text-amber-300 border-amber-500/30" },
+                { id: "d1-7", time: "19:30 ~ 23:00", title: "做模型", icon: "fa-cubes", color: "from-purple-500/20 to-pink-500/20 text-purple-300 border-purple-500/30" },
+                { id: "d1-8", time: "23:00 ~ 24:00", title: "和愛人熱線", icon: "fa-heart", color: "from-pink-500/20 to-rose-500/20 text-pink-300 border-pink-500/30" },
+                { id: "d1-9", time: "24:00 ~", title: "睡覺", icon: "fa-moon", color: "from-slate-500/20 to-zinc-500/20 text-slate-300 border-slate-500/30" }
+            ],
+            2: [
+                { id: "d2-1", time: "09:00 ~ 10:30", title: "吃早餐", icon: "fa-utensils", color: "from-amber-500/20 to-orange-500/20 text-amber-300 border-amber-500/30" },
+                { id: "d2-2", time: "11:00 ~ 14:00", title: "做模型", icon: "fa-robot", color: "from-blue-500/20 to-cyan-500/20 text-cyan-300 border-cyan-500/30" },
+                { id: "d2-3", time: "14:00 ~ 17:00", title: "睡午覺", icon: "fa-bed", color: "from-indigo-500/20 to-purple-500/20 text-indigo-300 border-indigo-500/30" },
+                { id: "d2-4", time: "17:00 ~ 17:30", title: "洗澡", icon: "fa-shower", color: "from-teal-500/20 to-emerald-500/20 text-teal-300 border-teal-500/30" },
+                { id: "d2-5", time: "17:30 ~ 18:00", title: "出門買晚餐", icon: "fa-bag-shopping", color: "from-orange-500/20 to-red-500/20 text-orange-300 border-orange-500/30" },
+                { id: "d2-6", time: "18:00 ~ 19:30", title: "吃晚餐", icon: "fa-bowl-food", color: "from-amber-500/20 to-yellow-500/20 text-amber-300 border-amber-500/30" },
+                { id: "d2-7", time: "19:30 ~ 23:00", title: "做模型", icon: "fa-cubes", color: "from-purple-500/20 to-pink-500/20 text-purple-300 border-purple-500/30" },
+                { id: "d2-8", time: "23:00 ~ 24:00", title: "和愛人熱線", icon: "fa-heart", color: "from-pink-500/20 to-rose-500/20 text-pink-300 border-pink-500/30" },
+                { id: "d2-9", time: "24:00 ~", title: "睡覺", icon: "fa-moon", color: "from-slate-500/20 to-zinc-500/20 text-slate-300 border-slate-500/30" }
+            ]
+        };
+
+        // State & LocalStorage Logic
+        let currentDay = 1;
+        let completedTasks = new Set(JSON.parse(localStorage.getItem('otaku_vacation_tasks') || '[]'));
+
+        function saveState() {
+            localStorage.setItem('otaku_vacation_tasks', JSON.stringify([...completedTasks]));
+            updateProgressBar();
+        }
+
+        function updateProgressBar() {
+            const currentDayItems = scheduleData[currentDay];
+            const completedCount = currentDayItems.filter(item => completedTasks.has(item.id)).length;
+            const percentage = Math.round((completedCount / currentDayItems.length) * 100);
+
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+            document.getElementById('progress-percent').innerText = `${percentage}%`;
+        }
+
+        // Render schedule items
+        function renderSchedule(day) {
+            const container = document.getElementById('schedule-container');
+            const items = scheduleData[day];
+
+            container.innerHTML = items.map(item => {
+                const isChecked = completedTasks.has(item.id);
+                return `
+                    <div id="card-${item.id}" onclick="toggleTask('${item.id}')" 
+                         class="glass-item rounded-2xl p-4 flex items-center justify-between cursor-pointer transition-all duration-300 active:scale-[0.98] ${isChecked ? 'completed-item' : ''}">
+                        <div class="flex items-center gap-3.5">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} border flex items-center justify-center shrink-0 shadow-inner">
+                                <i class="fa-solid ${item.icon} text-lg"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs font-semibold text-slate-400 mb-0.5 flex items-center gap-1.5">
+                                    <i class="fa-regular fa-clock text-[10px] text-amber-400"></i>
+                                    <span>${item.time}</span>
+                                </div>
+                                <div class="text-base font-bold text-white activity-title">${item.title}</div>
+                            </div>
+                        </div>
+                        <div class="shrink-0 pl-2">
+                            <div class="w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${isChecked ? 'bg-emerald-500 border-emerald-500 text-white shadow-lg shadow-emerald-500/30' : 'border-slate-500/60 text-transparent bg-slate-900/40'}">
+                                <i class="fa-solid fa-check text-xs"></i>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            updateProgressBar();
+        }
+
+        // Toggle task logic
+        function toggleTask(id) {
+            if (completedTasks.has(id)) {
+                completedTasks.delete(id);
+            } else {
+                completedTasks.add(id);
+            }
+            saveState();
+            renderSchedule(currentDay);
+        }
+
+        // Switch Tab
+        function switchDay(day) {
+            currentDay = day;
+            const btn1 = document.getElementById('tab-day1');
+            const btn2 = document.getElementById('tab-day2');
+
+            if (day === 1) {
+                btn1.classList.add('active-tab');
+                btn2.classList.remove('active-tab');
+            } else {
+                btn2.classList.add('active-tab');
+                btn1.classList.remove('active-tab');
+            }
+
+            renderSchedule(day);
+        }
+
+        // Countdown Timer
+        function startCountdown() {
+            // Target: 2026-11-06 24:00:00 = 2026-11-07 00:00:00
+            const targetDate = new Date('2026-11-07T00:00:00').getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference <= 0) {
+                    document.getElementById('days').innerText = '00';
+                    document.getElementById('hours').innerText = '00';
+                    document.getElementById('minutes').innerText = '00';
+                    document.getElementById('seconds').innerText = '00';
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // On Load Initializer
+        window.onload = function() {
+            renderSchedule(1);
+            startCountdown();
+        };
+    </script>
+</body>
+</html>
